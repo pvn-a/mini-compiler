@@ -69,7 +69,7 @@ continue {printf("%d\t%s\tKEYW\n", yylineno, yytext); return CONTINUE;}
                                 printf("%d\t%s\tID\n", yylineno, yytext);
                                 return ID;}
 
-"#include"  {printf("%d\t%s\tKEYW\n", yylineno, yytext); dflag = 0; return INCLUDE;}
+"#include"  {printf("%d\t%s\tPREPROCESSOR DIRECTIVE\n", yylineno, yytext); dflag = 0; return INCLUDE;}
 
 {alphabet}({alphabet}|{digit})*"\.h"?  {printf("%d\t%s\tPREPROCESSOR\n", yylineno, yytext); return H;}
 
