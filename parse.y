@@ -40,7 +40,7 @@ extern void decrScope();
 %}
 
 %define parse.error verbose
-%token ID NUM T_lt T_gt COMMA STRC TERMINATOR RETURN FLT T_lteq T_gteq T_neq T_eqeq T_pl T_min T_mul T_div T_and T_or T_incr T_decr T_not T_eq WHILE INT CHAR FLOAT VOID H MAINTOK INCLUDE BREAK  CONTINUE IF ELSE COUT STRING FOR OB CB OBR CBR ENDL CHARACTER str_ins str_extr
+%token ID NUM T_lt T_gt COMMA STRC TERMINATOR RETURN FLT T_lteq T_gteq T_neq T_eqeq T_pl T_min T_mul T_div T_and T_or T_incr T_decr T_not T_eq WHILE INT CHAR FLOAT VOID H MAINTOK INCLUDE BREAK  CONTINUE IF ELSE COUT STRING FOR OB CB OBR CBR ENDL CHARACTER str_ins str_extr CIN
 %left T_pl T_min
 %left T_mul T_div 
 
@@ -96,6 +96,7 @@ statement
       : ASSIGN_EXPR
       | ARITH_EXPR
       | TERNARY_EXPR
+      | INPUT
       | PRINT
       | RETURN ASSIGN_EXPR
       | RETURN ARITH_EXPR
@@ -255,6 +256,13 @@ ARITH_NEW:
 
 TERNARY_EXPR
       : OB COND CB '?' statement ':' statement
+      ;
+
+
+INPUT
+      : CIN str_extr ID
+      | CIN str_extr ID str_extr ID
+      | CIN str_extr ID str_extr ID str_extr ID
       ;
 
 

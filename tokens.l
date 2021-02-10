@@ -56,6 +56,9 @@ if {printf("%d\t%s\tKEYW\n", yylineno, yytext); return IF;}
 else {printf("%d\t%s\tKEYW\n", yylineno, yytext); return ELSE;}
 
 
+cin {printf("%d\t%s\tKEYW\n", yylineno, yytext); return CIN;}
+
+
 cout {printf("%d\t%s\tKEYW\n", yylineno, yytext); return COUT;}
 endl {printf("%d\t%s\tKEYW\n", yylineno, yytext); return ENDL;}
 break {printf("%d\t%s\tKEYW\n", yylineno, yytext); return BREAK;}

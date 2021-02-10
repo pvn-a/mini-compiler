@@ -94,7 +94,8 @@ extern int yydebug;
     ENDL = 300,
     CHARACTER = 301,
     str_ins = 302,
-    str_extr = 303
+    str_extr = 303,
+    CIN = 304
   };
 #endif
 /* Tokens.  */
@@ -144,6 +145,7 @@ extern int yydebug;
 #define CHARACTER 301
 #define str_ins 302
 #define str_extr 303
+#define CIN 304
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
