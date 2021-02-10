@@ -90,6 +90,9 @@ continue {printf("%d\t%s\tKEYW\n", yylineno, yytext); return CONTINUE;}
 {digit}+ {printf("%d\t%s\tINTEGER\n", yylineno, yytext); yylval = strdup(yytext); return NUM;}
 {digit}+\.{digit}+(E(\+|\-)?{digit}+)? {printf("%d\t%s\tFLOATING POINT NUMBER\n", yylineno, yytext); return FLT;}
 
+"<<" {printf("%d\t%s\tSTREAM INSERTION OPERATOR\n", yylineno, yytext); return str_ins;}
+">>" {printf("%d\t%s\tSTREAM EXTRACTION OPERATOR\n", yylineno, yytext); return str_extr;}
+
 \".*\" {printf("%d\t%s\tSTRING CONSTANT\n", yylineno, yytext); return STRING;}
 "==" {printf("%d\t%s\tRELATIONAL OPERATORS\n", yylineno, yytext); return T_eqeq;}
 "!=" {printf("%d\t%s\tRELATIONAL OPERATORS\n", yylineno, yytext); return T_neq;}
