@@ -170,22 +170,21 @@ void displaySymTable()
 void update(char* name, int value, int scope){
   for(int i = 0; i < count; i++)
   {
-    if(!strcmp(symTable[i].name, name) && symTable[i].scope == scope && symTable[i].valid){
+    if(!strcmp(symTable[i].name, name) && symTable[i].scope <= scope && symTable[i].valid){
         symTable[i].value = value;
     }
   }
 }
 
-int find(int  scope, char *name){
-  int present = 0;
-  for(int i = 0; i < count; i++)
-  {
-    if(!strcmp(symTable[i].name, name) && symTable[i].scope <= scope && symTable[i].valid){
-        return i;
-    }
-  }
-    return -1;
-  }
+int find(int  scope, char *name)
+{
+ 	for(int i = 0; i < count; i++)
+	{
+    	if(!strcmp(symTable[i].name, name) && symTable[i].scope <= scope && symTable[i].valid)
+        	return i;
+	}
+	return -1;
+}
 
 void incrScope(){
     for(int i = 0; i < count; i++)
