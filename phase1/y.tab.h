@@ -1,9 +1,8 @@
-/* A Bison parser, made by GNU Bison 3.5.1.  */
+/* A Bison parser, made by GNU Bison 3.0.4.  */
 
 /* Bison interface for Yacc-like parsers in C
 
-   Copyright (C) 1984, 1989-1990, 2000-2015, 2018-2020 Free Software Foundation,
-   Inc.
+   Copyright (C) 1984, 1989-1990, 2000-2015 Free Software Foundation, Inc.
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -31,9 +30,6 @@
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
-/* Undocumented macros, especially those whose name start with YY_,
-   are private implementation details.  Do not rely on them.  */
-
 #ifndef YY_YY_Y_TAB_H_INCLUDED
 # define YY_YY_Y_TAB_H_INCLUDED
 /* Debug traces.  */
@@ -50,102 +46,104 @@ extern int yydebug;
   enum yytokentype
   {
     ID = 258,
-    NUM = 259,
-    T_lt = 260,
-    T_gt = 261,
-    COMMA = 262,
-    STRC = 263,
-    TERMINATOR = 264,
-    RETURN = 265,
-    FLT = 266,
-    T_lteq = 267,
-    T_gteq = 268,
-    T_neq = 269,
-    T_eqeq = 270,
-    T_pl = 271,
-    T_min = 272,
-    T_mul = 273,
-    T_div = 274,
-    T_and = 275,
-    T_or = 276,
-    T_incr = 277,
-    T_decr = 278,
-    T_not = 279,
-    T_eq = 280,
-    WHILE = 281,
-    INT = 282,
-    CHAR = 283,
-    FLOAT = 284,
-    VOID = 285,
-    H = 286,
-    MAINTOK = 287,
-    INCLUDE = 288,
-    BREAK = 289,
-    CONTINUE = 290,
-    IF = 291,
-    ELSE = 292,
-    COUT = 293,
-    STRING = 294,
-    FOR = 295,
-    OB = 296,
-    CB = 297,
-    OBR = 298,
-    CBR = 299,
-    ENDL = 300,
-    CHARACTER = 301,
-    str_ins = 302,
-    str_extr = 303,
-    CIN = 304
+    CLASS = 259,
+    NUM = 260,
+    T_lt = 261,
+    T_gt = 262,
+    COMMA = 263,
+    STRC = 264,
+    TERMINATOR = 265,
+    RETURN = 266,
+    FLT = 267,
+    T_lteq = 268,
+    T_gteq = 269,
+    T_neq = 270,
+    T_eqeq = 271,
+    T_pl = 272,
+    T_min = 273,
+    T_mul = 274,
+    T_div = 275,
+    T_and = 276,
+    T_or = 277,
+    T_incr = 278,
+    T_decr = 279,
+    T_not = 280,
+    T_eq = 281,
+    WHILE = 282,
+    INT = 283,
+    CHAR = 284,
+    FLOAT = 285,
+    VOID = 286,
+    H = 287,
+    MAINTOK = 288,
+    INCLUDE = 289,
+    BREAK = 290,
+    CONTINUE = 291,
+    IF = 292,
+    ELSE = 293,
+    COUT = 294,
+    STRING = 295,
+    FOR = 296,
+    OB = 297,
+    CB = 298,
+    OBR = 299,
+    CBR = 300,
+    ENDL = 301,
+    CHARACTER = 302,
+    str_ins = 303,
+    str_extr = 304,
+    CIN = 305
   };
 #endif
 /* Tokens.  */
 #define ID 258
-#define NUM 259
-#define T_lt 260
-#define T_gt 261
-#define COMMA 262
-#define STRC 263
-#define TERMINATOR 264
-#define RETURN 265
-#define FLT 266
-#define T_lteq 267
-#define T_gteq 268
-#define T_neq 269
-#define T_eqeq 270
-#define T_pl 271
-#define T_min 272
-#define T_mul 273
-#define T_div 274
-#define T_and 275
-#define T_or 276
-#define T_incr 277
-#define T_decr 278
-#define T_not 279
-#define T_eq 280
-#define WHILE 281
-#define INT 282
-#define CHAR 283
-#define FLOAT 284
-#define VOID 285
-#define H 286
-#define MAINTOK 287
-#define INCLUDE 288
-#define BREAK 289
-#define CONTINUE 290
-#define IF 291
-#define ELSE 292
-#define COUT 293
-#define STRING 294
-#define FOR 295
-#define OB 296
-#define CB 297
-#define OBR 298
-#define CBR 299
-#define ENDL 300
-#define CHARACTER 301
-#define str_ins 302
-#define str_extr 303
-#define CIN 304
+#define CLASS 259
+#define NUM 260
+#define T_lt 261
+#define T_gt 262
+#define COMMA 263
+#define STRC 264
+#define TERMINATOR 265
+#define RETURN 266
+#define FLT 267
+#define T_lteq 268
+#define T_gteq 269
+#define T_neq 270
+#define T_eqeq 271
+#define T_pl 272
+#define T_min 273
+#define T_mul 274
+#define T_div 275
+#define T_and 276
+#define T_or 277
+#define T_incr 278
+#define T_decr 279
+#define T_not 280
+#define T_eq 281
+#define WHILE 282
+#define INT 283
+#define CHAR 284
+#define FLOAT 285
+#define VOID 286
+#define H 287
+#define MAINTOK 288
+#define INCLUDE 289
+#define BREAK 290
+#define CONTINUE 291
+#define IF 292
+#define ELSE 293
+#define COUT 294
+#define STRING 295
+#define FOR 296
+#define OB 297
+#define CB 298
+#define OBR 299
+#define CBR 300
+#define ENDL 301
+#define CHARACTER 302
+#define str_ins 303
+#define str_extr 304
+#define CIN 305
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED

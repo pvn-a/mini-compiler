@@ -83,8 +83,8 @@ Function :
 	 | MAIN
 	 ;
 
-FunctionParams : FunctionParams COMMA TYPE ID}
-	       | TYPE ID}
+FunctionParams : FunctionParams COMMA TYPE ID CBR
+	       | TYPE ID CBR
 	       ;
 
 
