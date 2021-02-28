@@ -1,4 +1,4 @@
 lex -w tokens.l
 yacc -y -d parse.y -Wnone
 gcc lex.yy.c y.tab.c -Wall
-./a.out < input.cpp
+./a.out < input5.cpp

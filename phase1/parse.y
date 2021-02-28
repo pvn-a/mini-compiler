@@ -184,14 +184,14 @@ ASSIGN_EXPR
         if (find(t_scope, $1) == -1) {
           yyerror("variable not declared");
         }
-      update($1, (int)$3, t_scope);
+      update($1, $3, t_scope);
     }
 
       | TYPE ID T_eq ARITH_EXPR {
         if(!insert(&count, t_scope, $1, $2, yylineno))
               yyerror("Variable redeclared");
 
-        update($2, (int)$4, t_scope);
+        update($2, $4, t_scope);
       }
 
     |
