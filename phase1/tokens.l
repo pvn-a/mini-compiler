@@ -139,15 +139,15 @@ continue {printf("%d\t%s\tKEYW\n", yylineno, yytext); return CONTINUE;}
 "<=" {printf("%d\t%s\tRELATIONAL OPERATORS\n", yylineno, yytext); return T_lteq;}
 "<" {printf("%d\t%s\tRELATIONAL OPERATORS\n", yylineno, yytext); return T_lt;}
 ">" {printf("%d\t%s\tRELATIONAL OPERATORS\n", yylineno, yytext); return T_gt;}
-\+\+ {printf("%d\t%s\tRELATIONAL OPERATORS\n", yylineno, yytext); return T_incr;}
+\+\+ {printf("%d\t%s\tUNARY OPERATORS\n", yylineno, yytext); return T_incr;}
 -- {printf("%d\t%s\tUNARY OPERATORS\n", yylineno, yytext); return T_decr;}
 
-\+ {printf("%d\t%s\tRELATIONAL OPERATORS\n", yylineno, yytext); yylval = strdup(yytext); return T_pl;}
-\- {printf("%d\t%s\tRELATIONAL OPERATORS\n", yylineno, yytext); yylval = strdup(yytext); return T_min;}
-\/ {printf("%d\t%s\tRELATIONAL OPERATORS\n", yylineno, yytext); yylval = strdup(yytext); return T_div;}
-\* {printf("%d\t%s\tRELATIONAL OPERATORS\n", yylineno, yytext); yylval = strdup(yytext); return T_mul;}
-&& {printf("%d\t%s\tRELATIONAL OPERATORS\n", yylineno, yytext); return T_and;}
-\|\| {printf("%d\t%s\tRELATIONAL OPERATORS\n", yylineno, yytext); return T_or;}
+\+ {printf("%d\t%s\ARTHMETIC OPERATORS\n", yylineno, yytext); yylval = strdup(yytext); return T_pl;}
+\- {printf("%d\t%s\ARTHMETIC OPERATORS\n", yylineno, yytext); yylval = strdup(yytext); return T_min;}
+\/ {printf("%d\t%s\ARTHMETIC OPERATORS\n", yylineno, yytext); yylval = strdup(yytext); return T_div;}
+\* {printf("%d\t%s\ARTHMETIC OPERATORS\n", yylineno, yytext); yylval = strdup(yytext); return T_mul;}
+&& {printf("%d\t%s\LOGICAL OPERATORS\n", yylineno, yytext); return T_and;}
+\|\| {printf("%d\t%s\LOGICAL OPERATORS\n", yylineno, yytext); return T_or;}
 ! {printf("%d\t%s\tLOGICAL OPERATORS\n", yylineno, yytext); return T_neq;}
 
 = {printf("%d\t%s\tASSIGNMENT\n", yylineno, yytext); return T_eq;}
