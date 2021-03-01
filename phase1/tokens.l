@@ -61,7 +61,6 @@ while {printf("%d\t%s\tKEYW\n", yylineno, yytext); flag = 1; t_scope++; incrScop
 return {printf("%d\t%s\tKEYW\n", yylineno, yytext); return RETURN;}
 if {printf("%d\t%s\tKEYW\n", yylineno, yytext); return IF;}
 else {printf("%d\t%s\tKEYW\n", yylineno, yytext); return ELSE;}
-elseif {printf("%d\t%s\tKEYW\n", yylineno, yytext); return ELSEIF;}
 
 
 
