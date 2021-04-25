@@ -25,10 +25,34 @@ def isPerfectPower(a, b):
 
 
 
+print("\n")
+print("Common subexpression ..")
+print("--------------------")
+quadruple_list=[]
 
 
 
+for i in list_of_lines:
+	print(i)
+	i = i.strip("\n")
+	op,arg1,arg2,res = i.split()
+	quadruple_list.append([op,arg1,arg2,res])
+	
 
+for i in quadruple_list:
+	
+	print(i[3],'=',i[1],i[0],i[2])
+
+
+for i in range(0,len(quadruple_list)):
+	for j in range(i+1,len(quadruple_list)):
+		if(quadruple_list[i][0]==quadruple_list[j][0] and quadruple_list[i][1]==quadruple_list[j][1] and quadruple_list[i][2]==quadruple_list[i][2]):
+				quadruple_list[j][3]=quadruple_list[i][3]
+
+
+
+for i in quadruple_list:
+	print(i[3],'=',i[1],i[0],i[2])
 
 
 
@@ -39,6 +63,7 @@ print("\n")
 print("Strength Reduction ")
 print("--------------------")
 for i in list_of_lines:
+	print(i)
 	i = i.strip("\n")
 	op,arg1,arg2,res = i.split()
 	if(arg2=='2' and op=='^'):
@@ -61,7 +86,7 @@ for i in list_of_lines:
 
 
 
-'''print("Quadruple form after Constant Folding")
+print("Quadruple form after Constant Folding")
 print("-------------------------------------")
 for i in list_of_lines:
     i = i.strip("\n")
@@ -146,6 +171,7 @@ print("\n")
 print("Constant folded expression - ")
 print("--------------------")
 for i in constantFoldedList:
+  
     if(i[0]=="="):
         print(i[3],i[0],i[1])
     elif(i[0] in ["+","-","*","/","==","<=","<",">",">="]):
@@ -187,7 +213,7 @@ for i in constantFoldedList:
         if(i[0]=="label"):
             print(i[3],":")
         if(i[0]=="not"):
-            print(i[3],"=",i[0],i[1])'''
+            print(i[3],"=",i[0],i[1])
                 
         
 

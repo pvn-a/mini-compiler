@@ -7,4 +7,9 @@ int main()
 	b=434;
 	int c;
 	c=a+b;
+	int d;
+	while(a<14)
+	{
+		d=a+b;
+	}
 }
