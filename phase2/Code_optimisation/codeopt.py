@@ -33,17 +33,19 @@ quadruple_list=[]
 
 
 for i in list_of_lines:
-	print(i)
+	# print(i)
 	i = i.strip("\n")
 	op,arg1,arg2,res = i.split()
 	quadruple_list.append([op,arg1,arg2,res])
 	
 
-for i in quadruple_list:
+# for i in quadruple_list:
 	
-	print(i[3],'=',i[1],i[0],i[2])
+# 	print(i[3],'=',i[1],i[0],i[2])
 
-print("\n\n\n")
+# print("\n\n\n")
+
+
 new_list= []
 new = -1; old = -1; k =0
 for i in range(0,len(quadruple_list)):
@@ -101,7 +103,7 @@ print("\n")
 print("Strength Reduction ")
 print("--------------------")
 for i in list_of_lines:
-	print(i)
+	# print(i)
 	i = i.strip("\n")
 	op,arg1,arg2,res = i.split()
 	if(arg2=='2' and op=='^'):
@@ -153,6 +155,9 @@ for i in list_of_lines:
             else:
                 print(op,arg1,arg2,res)
                 constantFoldedList.append([op,arg1,arg2,res])
+        
+        
+               
         else:
             flag1=0
             flag2=0
