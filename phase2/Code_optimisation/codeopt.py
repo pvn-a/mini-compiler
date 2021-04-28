@@ -46,14 +46,15 @@ for i in list_of_lines:
 # print("\n\n\n")
 
 
-new_list= []
+new_list= []; new_list1=[]; hold_list=[]
 new = -1; old = -1; k =0
 for i in range(0,len(quadruple_list)):
-	new = i
 	for j in range(i+1,len(quadruple_list)):
+		hold_list=[]
 		if(quadruple_list[i][0]==quadruple_list[j][0] and quadruple_list[i][1]==quadruple_list[j][1] and quadruple_list[i][2]==quadruple_list[j][2]):
-			if(new!=old):
-				old = new
+			hold_list.append([quadruple_list[i][0], quadruple_list[i][1], quadruple_list[i][2]])
+			if(hold_list not in new_list1):
+				new_list1.append(hold_list)
 				vari = 't'+str(k); k+=1
 				new_list.append([quadruple_list[i][0], quadruple_list[i][1], quadruple_list[i][2], vari])
 
