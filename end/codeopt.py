@@ -33,93 +33,94 @@ quadruple_list=[]
 
 
 for i in list_of_lines:
-	# print(i)
-	i = i.strip("\n")
-	op,arg1,arg2,res = i.split()
-	quadruple_list.append([op,arg1,arg2,res])
-	
+    # print(i)
+    i = i.strip("\n")
+    op,arg1,arg2,res = i.split()
+    quadruple_list.append([op,arg1,arg2,res])
+    
 
 # for i in quadruple_list:
-	
-# 	print(i[3],'=',i[1],i[0],i[2])
+    
+#   print(i[3],'=',i[1],i[0],i[2])
 
 # print("\n\n\n")
 
 
-new_list= []
+new_list= []; new_list1=[]; hold_list=[]
 new = -1; old = -1; k =0
 for i in range(0,len(quadruple_list)):
-	new = i
-	for j in range(i+1,len(quadruple_list)):
-		if(quadruple_list[i][0]==quadruple_list[j][0] and quadruple_list[i][1]==quadruple_list[j][1] and quadruple_list[i][2]==quadruple_list[j][2]):
-			if(new!=old):
-				old = new
-				vari = 't'+str(k); k+=1
-				new_list.append([quadruple_list[i][0], quadruple_list[i][1], quadruple_list[i][2], vari])
+    for j in range(i+1,len(quadruple_list)):
+        hold_list=[]
+        if(quadruple_list[i][0]==quadruple_list[j][0] and quadruple_list[i][1]==quadruple_list[j][1] and quadruple_list[i][2]==quadruple_list[j][2]):
+            hold_list.append([quadruple_list[i][0], quadruple_list[i][1], quadruple_list[i][2]])
+            if(hold_list not in new_list1):
+                new_list1.append(hold_list)
+                vari = 't'+str(k); k+=1
+                new_list.append([quadruple_list[i][0], quadruple_list[i][1], quadruple_list[i][2], vari])
 
 
 print("Before modificaiton ......")
 for i in quadruple_list:
-	if(i[0] == "="):
-		print(i[3], "=", i[1])
-	else:
-		print(i[3], "=", i[1], i[0], i[2])
+    if(i[0] == "="):
+        print(i[3], "=", i[1])
+    else:
+        print(i[3], "=", i[1], i[0], i[2])
 print()
 
 
 
 quadruple_list_new = []; k = 0
 for i in range(0, len(quadruple_list)):
-	for j in range(k, len(new_list)):
-		if(quadruple_list[i][0]==new_list[j][0] and quadruple_list[i][1]==new_list[j][1] and quadruple_list[i][2]==new_list[j][2]):
-			quadruple_list_new.append(new_list[j])
-			k+=1
-			break
-	quadruple_list_new.append(quadruple_list[i])
+    for j in range(k, len(new_list)):
+        if(quadruple_list[i][0]==new_list[j][0] and quadruple_list[i][1]==new_list[j][1] and quadruple_list[i][2]==new_list[j][2]):
+            quadruple_list_new.append(new_list[j])
+            k+=1
+            break
+    quadruple_list_new.append(quadruple_list[i])
 
 """print()
 for i in quadruple_list_new:
-	print(i)
+    print(i)
 print()
 """
 for j in range(0,len(new_list)):
-	for i in range(0,len(quadruple_list_new)):
-		if(quadruple_list_new[i][0]==new_list[j][0] and quadruple_list_new[i][1]==new_list[j][1] and quadruple_list_new[i][2]==new_list[j][2] and quadruple_list_new[i][3]!=new_list[j][3]):
-				quadruple_list_new[i][0] = "="
-				quadruple_list_new[i][1] = new_list[j][3]
-				quadruple_list_new[i][2] = "NULL"
+    for i in range(0,len(quadruple_list_new)):
+        if(quadruple_list_new[i][0]==new_list[j][0] and quadruple_list_new[i][1]==new_list[j][1] and quadruple_list_new[i][2]==new_list[j][2] and quadruple_list_new[i][3]!=new_list[j][3]):
+                quadruple_list_new[i][0] = "="
+                quadruple_list_new[i][1] = new_list[j][3]
+                quadruple_list_new[i][2] = "NULL"
 
 
 
 print("After modificaiton ......")
 for i in quadruple_list_new:
-	if(i[0] == "="):
-		print(i[3], "=", i[1])
-	else:
-		print(i[3], "=", i[1], i[0], i[2])
+    if(i[0] == "="):
+        print(i[3], "=", i[1])
+    else:
+        print(i[3], "=", i[1], i[0], i[2])
 
        
 print("\n")
 print("Strength Reduction ")
 print("--------------------")
 for i in list_of_lines:
-	# print(i)
-	i = i.strip("\n")
-	op,arg1,arg2,res = i.split()
-	if(arg2=='2' and op=='^'):
-		print(res,"=",arg1,'*',arg1)
-	
-	if(op=='*'):
-		if(arg2=='2'):
-			print(res,"=",arg1,'+',arg1)
-		elif(arg2.isnumeric() and isPerfectPower(int(arg2),2)):
-			print(res,"=",arg1,'<<',int(math.log(int(arg2), 2)))
-				
-	if(op=='/'):
-		
-		if(arg2.isnumeric() and isPerfectPower(int(arg2),2)):
-			print(res,"=",arg1,'>>',int(math.log(int(arg2), 2)))
-		
+    # print(i)
+    i = i.strip("\n")
+    op,arg1,arg2,res = i.split()
+    if(arg2=='2' and op=='^'):
+        print(res,"=",arg1,'*',arg1)
+    
+    if(op=='*'):
+        if(arg2=='2'):
+            print(res,"=",arg1,'+',arg1)
+        elif(arg2.isnumeric() and isPerfectPower(int(arg2),2)):
+            print(res,"=",arg1,'<<',int(math.log(int(arg2), 2)))
+                
+    if(op=='/'):
+        
+        if(arg2.isnumeric() and isPerfectPower(int(arg2),2)):
+            print(res,"=",arg1,'>>',int(math.log(int(arg2), 2)))
+        
 
 
 
@@ -201,7 +202,7 @@ for i in list_of_lines:
 
 
 
-					
+                    
 
 
 
