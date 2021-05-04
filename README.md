@@ -7,5 +7,5 @@ Built using LEX and YACC
 
 Constructs of C++ focused:
 - if - else
-- while llop
+- while loop
 - Basic data types - int, float, char
